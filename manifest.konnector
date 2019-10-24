@@ -1,0 +1,78 @@
+{
+  "version": "1.7.0",
+  "name": "Sosh",
+  "type": "konnector",
+  "language": "node",
+  "icon": "sosh.svg",
+  "slug": "sosh",
+  "source": "git@github.com:konnectors/cozy-konnector-sosh.git",
+  "editor": "Cozy",
+  "vendor_link": "https://www.sosh.fr/",
+  "categories": [
+    "telecom",
+    "isp"
+  ],
+  "fields": {
+    "login": {
+      "type": "text"
+    },
+    "password": {
+      "type": "password"
+    },
+    "advancedFields": {
+      "folderPath": {
+        "advanced": true,
+        "isRequired": false
+      }
+    }
+  },
+  "time_interval": [
+    14,
+    20
+  ],
+  "data_types": [
+    "bill"
+  ],
+  "screenshots": [],
+  "permissions": {
+    "bank": {
+      "description": "Required to link bills to a bank operation",
+      "type": "io.cozy.bank.operations"
+    },
+    "bills": {
+      "description": "Required to save the bills data",
+      "type": "io.cozy.bills"
+    },
+    "files": {
+      "description": "Required to save the bills",
+      "type": "io.cozy.files"
+    },
+    "accounts": {
+      "description": "Required to get the account's data",
+      "type": "io.cozy.accounts",
+      "verbs": [
+        "GET",
+        "PUT"
+      ]
+    }
+  },
+  "developer": {
+    "name": "Cozy Cloud",
+    "url": "https://cozy.io"
+  },
+  "langs": [
+    "fr"
+  ],
+  "locales": {
+    "fr": {
+      "short_description": "Récupérer vos données Sosh dans votre Cozy",
+      "long_description": "Ce fournisseur vous permettra de récupérer l'ensemble de vos factures Sosh dans votre Cozy."
+    },
+    "en": {
+      "short_description": "Fetch your Sosh data in your Cozy",
+      "long_description": "This provider will allow you to fetch all your Sosh bills in your Cozy."
+    }
+  },
+  "banksTransactionRegExp": "\\bsosh\\b",
+  "manifest_version": "2"
+}
