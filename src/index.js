@@ -108,11 +108,11 @@ class OrangeConnector extends CookieKonnector {
 
       response = await this.request({
         method: 'POST',
-        url: 'https://login.orange.fr/front/login',
+        url: 'https://login.orange.fr/api/login',
         headers,
         json: true,
         body: {
-          login
+          "login": login
         },
         resolveWithFullResponse
       })
@@ -123,11 +123,10 @@ class OrangeConnector extends CookieKonnector {
       const body = await this.request({
         method: 'POST',
         json: true,
-        url: 'https://login.orange.fr/front/password',
+        url: 'https://login.orange.fr/api/password',
         headers,
         body: {
-          login,
-          password
+          "password": password
         }
       })
 
